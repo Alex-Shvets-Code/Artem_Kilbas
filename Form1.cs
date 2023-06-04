@@ -179,7 +179,7 @@ namespace Practic
         {
             gBoxReq6.Visible = true;
             data.Clear();
-            query = "SELECT Last_Name FROM Supplier";
+            query = "SELECT ID FROM buyer";
 
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
@@ -452,20 +452,21 @@ namespace Practic
         {
             Console.WriteLine("Btn 6");
             data.Clear();
+            cBoxBuyerSearch.Items.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
-            int ID = cBoxBuyerSearch.SelectedIndex + 1;
+            string ID = cBoxBuyerSearch.Text;
+            Console.WriteLine(ID);
 
-            query = "SELECT p.Product_Name, p.Price, p.Product_Count " +
-                    "FROM Product p JOIN Warehouse_History w" +
-                    " ON p.Product_Code = w.Product_Code" +
-                    " JOIN Buyer b ON w.Buyer_ID = @ID;";          
+            query = "SELECT  p.Product_Name, p.Price, w.Product_Count " +
+        "FROM product p " +
+        "JOIN warehouse_history w ON p.Product_Code = w.Product_Code " +
+        "JOIN buyer b ON w.Buyer_ID = b.ID " +
+        "WHERE b.ID = " + ID;
 
             Console.WriteLine(query);
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
-
-            command.Parameters.Add("@ID", MySqlDbType.UInt64).Value = ID;
 
             dataGridView1.ColumnCount = 3;
             dataGridView1.Columns[0].HeaderText = "Product Name";
@@ -473,31 +474,39 @@ namespace Practic
             dataGridView1.Columns[2].HeaderText = "Product Count";
 
             try
+{
+    db.openConnection();
+    MySqlDataReader reader = command.ExecuteReader();
+
+    if (reader.HasRows) // Проверка наличия данных
+    {
+        while (reader.Read())
+        {
+            data.Add(new string[dataGridView1.ColumnCount]);
+
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
             {
-                db.openConnection();
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    data.Add(new string[dataGridView1.ColumnCount]);
-
-                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                    {
-                        Console.WriteLine(reader[i].ToString());
-                        data[data.Count - 1][i] = reader[i].ToString();
-                    }
-                }
-                reader.Close();
+                Console.WriteLine(reader[i].ToString());
+                data[data.Count - 1][i] = reader[i].ToString();
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-            finally { db.closeConnection(); }
+           
+            dataGridView1.Rows.Add(data[data.Count - 1]);
+        }
+    }
 
-            foreach (string[] rows in data)
-            {
-                dataGridView1.Rows.Add(rows);
-            }
+    reader.Close();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}
+finally
+{
+    db.closeConnection();
+}
 
-            gBoxReq5.Visible = false;
+
+            gBoxReq6.Visible = false;
         }//6
 
         private void btnSearchWork_Click(object sender, EventArgs e)
