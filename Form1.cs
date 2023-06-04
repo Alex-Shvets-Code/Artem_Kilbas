@@ -310,7 +310,7 @@ namespace Practic
             {
                 dataGridView1.Rows.Add(rows);
             }
-        }//+
+        }//2
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -352,7 +352,7 @@ namespace Practic
             }
 
             gBoxReq3.Visible = false;
-        }//+
+        }//3
 
         private void btnPriceReq_Click(object sender, EventArgs e)
         {
@@ -397,9 +397,9 @@ namespace Practic
             }
 
             gBoxReq4.Visible = false;
-        }//+
+        }//4
 
-        private void btnBuyersSearch_Click(object sender, EventArgs e)
+        private void BtnBuyer_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Btn 6");
             data.Clear();
@@ -446,7 +446,59 @@ namespace Practic
             }
 
             gBoxReq5.Visible = false;
-        }
+        }//5
+
+        private void BtnBuyerSearch_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Btn 6");
+            data.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            int ID = cBoxBuyerSearch.SelectedIndex + 1;
+
+            query = "SELECT p.Product_Name, p.Price, p.Product_Count " +
+                    "FROM Product p JOIN Warehouse_History w" +
+                    " ON p.Product_Code = w.Product_Code" +
+                    " JOIN Buyer b ON w.Buyer_ID = @ID;";          
+
+            Console.WriteLine(query);
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            command.Parameters.Add("@ID", MySqlDbType.UInt64).Value = ID;
+
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].HeaderText = "Product Name";
+            dataGridView1.Columns[1].HeaderText = "Price";
+            dataGridView1.Columns[2].HeaderText = "Product Count";
+
+            try
+            {
+                db.openConnection();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add(new string[dataGridView1.ColumnCount]);
+
+                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    {
+                        Console.WriteLine(reader[i].ToString());
+                        data[data.Count - 1][i] = reader[i].ToString();
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            finally { db.closeConnection(); }
+
+            foreach (string[] rows in data)
+            {
+                dataGridView1.Rows.Add(rows);
+            }
+
+            gBoxReq5.Visible = false;
+        }//6
 
         private void btnSearchWork_Click(object sender, EventArgs e)
         {
@@ -492,7 +544,7 @@ namespace Practic
                 dataGridView1.Rows.Add(rows);
             }
 
-        }//+
+        }//7
 
         private void btnCertificateTest_Click(object sender, EventArgs e)
         {
@@ -524,7 +576,7 @@ namespace Practic
             finally { db.closeConnection(); }
 
             Console.WriteLine(certificate);
-        }//+
+        }//8
 
         private void BtnClear_Click(object sender, EventArgs e)
         {

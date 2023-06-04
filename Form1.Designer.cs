@@ -58,10 +58,10 @@
             this.btnPriceReq = new System.Windows.Forms.Button();
             this.gBoxReq5 = new System.Windows.Forms.GroupBox();
             this.cBoxBuyer = new System.Windows.Forms.ComboBox();
-            this.BtnBuyerSearch = new System.Windows.Forms.Button();
+            this.BtnBuyer = new System.Windows.Forms.Button();
             this.gBoxReq6 = new System.Windows.Forms.GroupBox();
             this.cBoxBuyerSearch = new System.Windows.Forms.ComboBox();
-            this.btnBuyersSearch = new System.Windows.Forms.Button();
+            this.BtnBuyerSearch = new System.Windows.Forms.Button();
             this.gBoxReq7 = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchWork = new System.Windows.Forms.Button();
@@ -387,7 +387,7 @@
             // gBoxReq5
             // 
             this.gBoxReq5.Controls.Add(this.cBoxBuyer);
-            this.gBoxReq5.Controls.Add(this.BtnBuyerSearch);
+            this.gBoxReq5.Controls.Add(this.BtnBuyer);
             this.gBoxReq5.Location = new System.Drawing.Point(337, 11);
             this.gBoxReq5.Name = "gBoxReq5";
             this.gBoxReq5.Size = new System.Drawing.Size(156, 102);
@@ -404,20 +404,20 @@
             this.cBoxBuyer.Size = new System.Drawing.Size(143, 21);
             this.cBoxBuyer.TabIndex = 10;
             // 
-            // BtnBuyerSearch
+            // BtnBuyer
             // 
-            this.BtnBuyerSearch.Location = new System.Drawing.Point(7, 62);
-            this.BtnBuyerSearch.Name = "BtnBuyerSearch";
-            this.BtnBuyerSearch.Size = new System.Drawing.Size(143, 26);
-            this.BtnBuyerSearch.TabIndex = 9;
-            this.BtnBuyerSearch.Text = "Request";
-            this.BtnBuyerSearch.UseVisualStyleBackColor = true;
-            this.BtnBuyerSearch.Click += new System.EventHandler(this.btnBuyersSearch_Click);
+            this.BtnBuyer.Location = new System.Drawing.Point(7, 62);
+            this.BtnBuyer.Name = "BtnBuyer";
+            this.BtnBuyer.Size = new System.Drawing.Size(143, 26);
+            this.BtnBuyer.TabIndex = 9;
+            this.BtnBuyer.Text = "Request";
+            this.BtnBuyer.UseVisualStyleBackColor = true;
+            this.BtnBuyer.Click += new System.EventHandler(this.BtnBuyer_Click);
             // 
             // gBoxReq6
             // 
             this.gBoxReq6.Controls.Add(this.cBoxBuyerSearch);
-            this.gBoxReq6.Controls.Add(this.btnBuyersSearch);
+            this.gBoxReq6.Controls.Add(this.BtnBuyerSearch);
             this.gBoxReq6.Location = new System.Drawing.Point(405, 12);
             this.gBoxReq6.Name = "gBoxReq6";
             this.gBoxReq6.Size = new System.Drawing.Size(169, 101);
@@ -434,15 +434,15 @@
             this.cBoxBuyerSearch.Size = new System.Drawing.Size(121, 21);
             this.cBoxBuyerSearch.TabIndex = 10;
             // 
-            // btnBuyersSearch
+            // BtnBuyerSearch
             // 
-            this.btnBuyersSearch.Location = new System.Drawing.Point(7, 62);
-            this.btnBuyersSearch.Name = "btnBuyersSearch";
-            this.btnBuyersSearch.Size = new System.Drawing.Size(121, 26);
-            this.btnBuyersSearch.TabIndex = 9;
-            this.btnBuyersSearch.Text = "Request";
-            this.btnBuyersSearch.UseVisualStyleBackColor = true;
-            this.btnBuyersSearch.Click += new System.EventHandler(this.btnBuyersSearch_Click);
+            this.BtnBuyerSearch.Location = new System.Drawing.Point(7, 62);
+            this.BtnBuyerSearch.Name = "BtnBuyerSearch";
+            this.BtnBuyerSearch.Size = new System.Drawing.Size(121, 26);
+            this.BtnBuyerSearch.TabIndex = 9;
+            this.BtnBuyerSearch.Text = "Request";
+            this.BtnBuyerSearch.UseVisualStyleBackColor = true;
+            this.BtnBuyerSearch.Click += new System.EventHandler(this.BtnBuyerSearch_Click);
             // 
             // gBoxReq7
             // 
@@ -584,10 +584,10 @@
         private System.Windows.Forms.Button btnPriceReq;
         private System.Windows.Forms.GroupBox gBoxReq5;
         private System.Windows.Forms.ComboBox cBoxBuyer;
-        private System.Windows.Forms.Button BtnBuyerSearch;
+        private System.Windows.Forms.Button BtnBuyer;
         private System.Windows.Forms.GroupBox gBoxReq6;
         private System.Windows.Forms.ComboBox cBoxBuyerSearch;
-        private System.Windows.Forms.Button btnBuyersSearch;
+        private System.Windows.Forms.Button BtnBuyerSearch;
         private System.Windows.Forms.GroupBox gBoxReq7;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Button btnSearchWork;
