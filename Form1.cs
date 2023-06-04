@@ -74,11 +74,9 @@ namespace Practic
 
         private void BtnShowTables_Click(object sender, EventArgs e)
         {
+            data.Clear();
             dataGridView1.Rows.Clear();
-
-            DB db = new DB();
-            List<string[]> data = new List<string[]>();
-            string query = "SHOW TABLES";
+            query = "SHOW TABLES";
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
             db.openConnection();
@@ -112,10 +110,12 @@ namespace Practic
         private void BtnShowReq2_Click(object sender, EventArgs e)
         {
             gBoxReq2.Visible = true;
+            data.Clear();
         }//+
 
         private void BtnShowReq3_Click(object sender, EventArgs e)
         {
+            data.Clear();
             gBoxReq3.Visible = true;
             query = "SELECT Product_Name FROM Product";
 
@@ -144,11 +144,14 @@ namespace Practic
         private void BtnShowReq4_Click(object sender, EventArgs e)
         {
             gBoxReq4.Visible = true;
+            data.Clear();
         }//+
 
         private void BtnShowReq5_Click(object sender, EventArgs e)
         {
+            data.Clear();
             gBoxReq5.Visible = true;
+            cBoxBuyer.Items.Clear();
             query = "SELECT Last_Name FROM Supplier";
 
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
@@ -175,8 +178,8 @@ namespace Practic
         private void BtnShowReq6_Click(object sender, EventArgs e)
         {
             gBoxReq6.Visible = true;
-
-            query = "SELECT ID, Last_Name, First_Name FROM Supplier";
+            data.Clear();
+            query = "SELECT Last_Name FROM Supplier";
 
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
@@ -202,11 +205,13 @@ namespace Practic
         private void BtnShowReq7_Click(object sender, EventArgs e)
         {
             gBoxReq7.Visible = true;
+            data.Clear();
         }//+
 
         private void BtnShowReq8_Click(object sender, EventArgs e)
         {
             gBoxReq8.Visible = true;
+            data.Clear();
         }//+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -258,6 +263,7 @@ namespace Practic
 
         private void BtnRequest_Click(object sender, EventArgs e)
         {
+            data.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -265,8 +271,6 @@ namespace Practic
             query = "";
 
             DB db = new DB();
-            List<string[]> data = new List<string[]>();
-
             count = 0;
             if (checkBox1.Checked) { query += checkBox1.Text + ','; count++; dataGridView1.Columns.Add(" ", checkBox1.Text); }
             if (checkBox2.Checked) { query += checkBox2.Text + ','; count++; dataGridView1.Columns.Add(" ", checkBox2.Text); }
@@ -310,7 +314,7 @@ namespace Practic
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-
+            data.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -352,6 +356,7 @@ namespace Practic
 
         private void btnPriceReq_Click(object sender, EventArgs e)
         {
+            data.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -394,8 +399,10 @@ namespace Practic
             gBoxReq4.Visible = false;
         }//+
 
-        private void BtnBuyerSearch_Click(object sender, EventArgs e)
+        private void btnBuyersSearch_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Btn 6");
+            data.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -439,10 +446,11 @@ namespace Practic
             }
 
             gBoxReq5.Visible = false;
-        }//+
+        }
 
         private void btnSearchWork_Click(object sender, EventArgs e)
         {
+            data.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -517,5 +525,21 @@ namespace Practic
 
             Console.WriteLine(certificate);
         }//+
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            gBoxReq2.Visible = false;
+            gBoxReq3.Visible = false;
+            gBoxReq4.Visible = false;
+            gBoxReq5.Visible = false;
+            gBoxReq6.Visible = false;
+            gBoxReq7.Visible = false;
+            gBoxReq8.Visible = false;
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+        }
+
+       
     }
 }

@@ -52,6 +52,9 @@
             this.cBoxSearch = new System.Windows.Forms.ComboBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.gBoxReq4 = new System.Windows.Forms.GroupBox();
+            this.rButtonLow = new System.Windows.Forms.RadioButton();
+            this.rButtonHight = new System.Windows.Forms.RadioButton();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.btnPriceReq = new System.Windows.Forms.Button();
             this.gBoxReq5 = new System.Windows.Forms.GroupBox();
             this.cBoxBuyer = new System.Windows.Forms.ComboBox();
@@ -65,9 +68,7 @@
             this.gBoxReq8 = new System.Windows.Forms.GroupBox();
             this.tBoxNameProduct = new System.Windows.Forms.TextBox();
             this.btnCertificateTest = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.rButtonHight = new System.Windows.Forms.RadioButton();
-            this.rButtonLow = new System.Windows.Forms.RadioButton();
+            this.BtnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gBoxReq2.SuspendLayout();
             this.gBoxReq3.SuspendLayout();
@@ -342,6 +343,37 @@
             this.gBoxReq4.Text = "REQ4";
             this.gBoxReq4.Visible = false;
             // 
+            // rButtonLow
+            // 
+            this.rButtonLow.AutoSize = true;
+            this.rButtonLow.Location = new System.Drawing.Point(112, 47);
+            this.rButtonLow.Name = "rButtonLow";
+            this.rButtonLow.Size = new System.Drawing.Size(45, 17);
+            this.rButtonLow.TabIndex = 5;
+            this.rButtonLow.Text = "Low";
+            this.rButtonLow.UseVisualStyleBackColor = true;
+            // 
+            // rButtonHight
+            // 
+            this.rButtonHight.AutoSize = true;
+            this.rButtonHight.Checked = true;
+            this.rButtonHight.Location = new System.Drawing.Point(112, 23);
+            this.rButtonHight.Name = "rButtonHight";
+            this.rButtonHight.Size = new System.Drawing.Size(50, 17);
+            this.rButtonHight.TabIndex = 4;
+            this.rButtonHight.TabStop = true;
+            this.rButtonHight.Text = "Hight";
+            this.rButtonHight.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(6, 20);
+            this.maskedTextBox1.Mask = "00000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 3;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            // 
             // btnPriceReq
             // 
             this.btnPriceReq.Location = new System.Drawing.Point(6, 63);
@@ -380,7 +412,7 @@
             this.BtnBuyerSearch.TabIndex = 9;
             this.BtnBuyerSearch.Text = "Request";
             this.BtnBuyerSearch.UseVisualStyleBackColor = true;
-            this.BtnBuyerSearch.Click += new System.EventHandler(this.BtnBuyerSearch_Click);
+            this.BtnBuyerSearch.Click += new System.EventHandler(this.btnBuyersSearch_Click);
             // 
             // gBoxReq6
             // 
@@ -410,6 +442,7 @@
             this.btnBuyersSearch.TabIndex = 9;
             this.btnBuyersSearch.Text = "Request";
             this.btnBuyersSearch.UseVisualStyleBackColor = true;
+            this.btnBuyersSearch.Click += new System.EventHandler(this.btnBuyersSearch_Click);
             // 
             // gBoxReq7
             // 
@@ -471,42 +504,22 @@
             this.btnCertificateTest.UseVisualStyleBackColor = true;
             this.btnCertificateTest.Click += new System.EventHandler(this.btnCertificateTest_Click);
             // 
-            // maskedTextBox1
+            // BtnClear
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(6, 20);
-            this.maskedTextBox1.Mask = "00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.ValidatingType = typeof(int);
-            // 
-            // rButtonHight
-            // 
-            this.rButtonHight.AutoSize = true;
-            this.rButtonHight.Checked = true;
-            this.rButtonHight.Location = new System.Drawing.Point(112, 23);
-            this.rButtonHight.Name = "rButtonHight";
-            this.rButtonHight.Size = new System.Drawing.Size(50, 17);
-            this.rButtonHight.TabIndex = 4;
-            this.rButtonHight.TabStop = true;
-            this.rButtonHight.Text = "Hight";
-            this.rButtonHight.UseVisualStyleBackColor = true;
-            // 
-            // rButtonLow
-            // 
-            this.rButtonLow.AutoSize = true;
-            this.rButtonLow.Location = new System.Drawing.Point(112, 47);
-            this.rButtonLow.Name = "rButtonLow";
-            this.rButtonLow.Size = new System.Drawing.Size(45, 17);
-            this.rButtonLow.TabIndex = 5;
-            this.rButtonLow.Text = "Low";
-            this.rButtonLow.UseVisualStyleBackColor = true;
+            this.BtnClear.Location = new System.Drawing.Point(617, 192);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(138, 26);
+            this.BtnClear.TabIndex = 17;
+            this.BtnClear.Text = "Clear";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.gBoxReq8);
             this.Controls.Add(this.gBoxReq7);
             this.Controls.Add(this.gBoxReq6);
@@ -584,6 +597,7 @@
         private System.Windows.Forms.Button btnCertificateTest;
         private System.Windows.Forms.RadioButton rButtonLow;
         private System.Windows.Forms.RadioButton rButtonHight;
+        private System.Windows.Forms.Button BtnClear;
     }
 }
 
