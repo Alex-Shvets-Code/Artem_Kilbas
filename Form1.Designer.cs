@@ -35,7 +35,6 @@
             this.BtnShowReq4 = new System.Windows.Forms.Button();
             this.BtnShowReq5 = new System.Windows.Forms.Button();
             this.BtnShowReq6 = new System.Windows.Forms.Button();
-            this.BtnShowReq7 = new System.Windows.Forms.Button();
             this.BtnShowReq8 = new System.Windows.Forms.Button();
             this.BtnGenerate = new System.Windows.Forms.Button();
             this.gBoxReq2 = new System.Windows.Forms.GroupBox();
@@ -62,7 +61,6 @@
             this.gBoxReq6 = new System.Windows.Forms.GroupBox();
             this.cBoxBuyerSearch = new System.Windows.Forms.ComboBox();
             this.BtnBuyerSearch = new System.Windows.Forms.Button();
-            this.gBoxReq7 = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchWork = new System.Windows.Forms.Button();
             this.gBoxReq8 = new System.Windows.Forms.GroupBox();
@@ -75,7 +73,6 @@
             this.gBoxReq4.SuspendLayout();
             this.gBoxReq5.SuspendLayout();
             this.gBoxReq6.SuspendLayout();
-            this.gBoxReq7.SuspendLayout();
             this.gBoxReq8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,16 +144,6 @@
             this.BtnShowReq6.Text = "REQ 6";
             this.BtnShowReq6.UseVisualStyleBackColor = true;
             this.BtnShowReq6.Click += new System.EventHandler(this.BtnShowReq6_Click);
-            // 
-            // BtnShowReq7
-            // 
-            this.BtnShowReq7.Location = new System.Drawing.Point(499, 12);
-            this.BtnShowReq7.Name = "BtnShowReq7";
-            this.BtnShowReq7.Size = new System.Drawing.Size(75, 23);
-            this.BtnShowReq7.TabIndex = 6;
-            this.BtnShowReq7.Text = "REQ  7";
-            this.BtnShowReq7.UseVisualStyleBackColor = true;
-            this.BtnShowReq7.Click += new System.EventHandler(this.BtnShowReq7_Click);
             // 
             // BtnShowReq8
             // 
@@ -444,18 +431,6 @@
             this.BtnBuyerSearch.UseVisualStyleBackColor = true;
             this.BtnBuyerSearch.Click += new System.EventHandler(this.BtnBuyerSearch_Click);
             // 
-            // gBoxReq7
-            // 
-            this.gBoxReq7.Controls.Add(this.maskedTextBox2);
-            this.gBoxReq7.Controls.Add(this.btnSearchWork);
-            this.gBoxReq7.Location = new System.Drawing.Point(499, 12);
-            this.gBoxReq7.Name = "gBoxReq7";
-            this.gBoxReq7.Size = new System.Drawing.Size(156, 101);
-            this.gBoxReq7.TabIndex = 15;
-            this.gBoxReq7.TabStop = false;
-            this.gBoxReq7.Text = "REQ7";
-            this.gBoxReq7.Visible = false;
-            // 
             // maskedTextBox2
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(7, 19);
@@ -467,13 +442,10 @@
             // 
             // btnSearchWork
             // 
-            this.btnSearchWork.Location = new System.Drawing.Point(6, 62);
+            this.btnSearchWork.Location = new System.Drawing.Point(0, 0);
             this.btnSearchWork.Name = "btnSearchWork";
-            this.btnSearchWork.Size = new System.Drawing.Size(138, 25);
-            this.btnSearchWork.TabIndex = 2;
-            this.btnSearchWork.Text = "Reguest";
-            this.btnSearchWork.UseVisualStyleBackColor = true;
-            this.btnSearchWork.Click += new System.EventHandler(this.btnSearchWork_Click);
+            this.btnSearchWork.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchWork.TabIndex = 0;
             // 
             // gBoxReq8
             // 
@@ -521,7 +493,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.gBoxReq8);
-            this.Controls.Add(this.gBoxReq7);
             this.Controls.Add(this.gBoxReq6);
             this.Controls.Add(this.gBoxReq5);
             this.Controls.Add(this.gBoxReq4);
@@ -530,7 +501,6 @@
             this.Controls.Add(this.BtnGenerate);
             this.Controls.Add(this.BtnShowReq5);
             this.Controls.Add(this.BtnShowReq6);
-            this.Controls.Add(this.BtnShowReq7);
             this.Controls.Add(this.BtnShowReq8);
             this.Controls.Add(this.BtnShowReq2);
             this.Controls.Add(this.BtnShowReq1);
@@ -547,8 +517,6 @@
             this.gBoxReq4.PerformLayout();
             this.gBoxReq5.ResumeLayout(false);
             this.gBoxReq6.ResumeLayout(false);
-            this.gBoxReq7.ResumeLayout(false);
-            this.gBoxReq7.PerformLayout();
             this.gBoxReq8.ResumeLayout(false);
             this.gBoxReq8.PerformLayout();
             this.ResumeLayout(false);
@@ -564,7 +532,6 @@
         private System.Windows.Forms.Button BtnShowReq4;
         private System.Windows.Forms.Button BtnShowReq5;
         private System.Windows.Forms.Button BtnShowReq6;
-        private System.Windows.Forms.Button BtnShowReq7;
         private System.Windows.Forms.Button BtnShowReq8;
         private System.Windows.Forms.Button BtnGenerate;
         private System.Windows.Forms.GroupBox gBoxReq2;
@@ -588,7 +555,6 @@
         private System.Windows.Forms.GroupBox gBoxReq6;
         private System.Windows.Forms.ComboBox cBoxBuyerSearch;
         private System.Windows.Forms.Button BtnBuyerSearch;
-        private System.Windows.Forms.GroupBox gBoxReq7;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Button btnSearchWork;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;

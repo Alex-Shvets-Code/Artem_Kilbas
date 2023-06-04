@@ -201,13 +201,6 @@ namespace Practic
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
             finally { db.closeConnection(); }
         }//+
-
-        private void BtnShowReq7_Click(object sender, EventArgs e)
-        {
-            gBoxReq7.Visible = true;
-            data.Clear();
-        }//+
-
         private void BtnShowReq8_Click(object sender, EventArgs e)
         {
             gBoxReq8.Visible = true;
@@ -460,10 +453,10 @@ namespace Practic
             Console.WriteLine(ID);
 
             query = "SELECT  p.Product_Name, p.Price, w.Product_Count " +
-        "FROM product p " +
-        "JOIN warehouse_history w ON p.Product_Code = w.Product_Code " +
-        "JOIN buyer b ON w.Buyer_ID = b.ID " +
-        "WHERE b.ID = " + ID;
+                    "FROM product p " +
+                    "JOIN warehouse_history w ON p.Product_Code = w.Product_Code " +
+                    "JOIN buyer b ON w.Buyer_ID = b.ID " +
+                    "WHERE b.ID = " + ID;
 
             Console.WriteLine(query);
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
@@ -508,53 +501,6 @@ finally
 
             gBoxReq6.Visible = false;
         }//6
-
-        private void btnSearchWork_Click(object sender, EventArgs e)
-        {
-            data.Clear();
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-
-            gBoxReq7.Visible = false;
-
-            int number = Int32.Parse(maskedTextBox2.Text);
-
-            query = "SELECT b.Last_Name FROM Warehouse_History wh " +
-                    "JOIN Buyer b ON wh.Buyer_ID = b.ID WHERE wh.ID = " + number;
-
-            Console.WriteLine(query);
-            MySqlCommand command = new MySqlCommand(query, db.getConnection());
-
-            dataGridView1.ColumnCount = 1;
-            dataGridView1.Columns[0].HeaderText = "Last Name";
-
-            try
-            {
-                db.openConnection();
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    data.Add(new string[dataGridView1.ColumnCount]);
-
-                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                    {
-                        Console.WriteLine(reader[i].ToString());
-                        data[data.Count - 1][i] = reader[i].ToString();
-                    }
-                }
-                reader.Close();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-            finally { db.closeConnection(); }
-
-            foreach (string[] rows in data)
-            {
-                dataGridView1.Rows.Add(rows);
-            }
-
-        }//7
-
         private void btnCertificateTest_Click(object sender, EventArgs e)
         {
             gBoxReq8.Visible = false;
@@ -585,7 +531,7 @@ finally
             finally { db.closeConnection(); }
 
             Console.WriteLine(certificate);
-        }//8
+        }//7
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
@@ -594,7 +540,6 @@ finally
             gBoxReq4.Visible = false;
             gBoxReq5.Visible = false;
             gBoxReq6.Visible = false;
-            gBoxReq7.Visible = false;
             gBoxReq8.Visible = false;
 
             dataGridView1.Columns.Clear();
