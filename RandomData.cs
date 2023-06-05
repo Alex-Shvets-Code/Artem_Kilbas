@@ -109,6 +109,13 @@ namespace Practic
             "Southaven, Rafe Lane "
         };
 
+        private List<string> productName = new List<string>()
+        {
+            "1",
+            "2",
+            "3"
+        };
+
         public static string GenerateRandomNumber(int length)
         {
             const string chars = "1234567890";
@@ -121,7 +128,7 @@ namespace Practic
             return startDate.AddDays(random.Next(range));
         }
 
-        public static List<Product> GenerateProductData(int numRecords)
+        public List<Product> GenerateProductData(int numRecords)
         {
             var products = new List<Product>();
 
@@ -130,7 +137,7 @@ namespace Practic
                 var product = new Product
                 {
                     ID = i,
-                    Product_Name = GenerateRandomString(10),
+                    Product_Name = productName[random.Next(productName.Count)],
                     Product_Code = GenerateRandomString(10),
                     Product_Count = random.Next(1, 900000),
                     Price = random.Next(1, 1000),

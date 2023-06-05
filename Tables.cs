@@ -43,7 +43,6 @@ namespace Practic
     {
         public int ID { get; set; }
         public string Supplier_Name { get; set; }
-
         public string Supplier_Surname { get; set; }
         public string Supplier_Address { get; set; }
         public string Supplier_Phone { get; set; }
