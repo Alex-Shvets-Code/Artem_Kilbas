@@ -471,7 +471,7 @@ namespace Practic
     db.openConnection();
     MySqlDataReader reader = command.ExecuteReader();
 
-    if (reader.HasRows) // Проверка наличия данных
+    if (reader.HasRows)
     {
         while (reader.Read())
         {
@@ -546,6 +546,84 @@ finally
             dataGridView1.Rows.Clear();
         }
 
-       
+        private void BtnBestBuyer_Click(object sender, EventArgs e)
+        {
+            query = "SELECT DISTINCT Buyer_ID, COUNT(*) AS Total_Purchases " +
+                "FROM Warehouse_History GROUP BY Buyer_ID " +
+                "ORDER BY Total_Purchases DESC LIMIT 1;";
+
+            Console.WriteLine(query);
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            dataGridView1.ColumnCount = 1;
+            dataGridView1.Columns[0].HeaderText = "Buyer ID";
+
+            try
+            {
+                db.openConnection();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add(new string[dataGridView1.ColumnCount]);
+
+                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    {
+                        Console.WriteLine(reader[i].ToString());
+                        data[data.Count - 1][i] = reader[i].ToString();
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            finally { db.closeConnection(); }
+
+            foreach (string[] rows in data)
+            {
+                dataGridView1.Rows.Add(rows);
+            }
+        }
+
+        private void BtnOverpriceProduct_Click(object sender, EventArgs e)
+        {
+            query = "SELECT DISTINCT * FROM Product WHERE Price > (SELECT AVG(Price) FROM Product);";
+
+            Console.WriteLine(query);
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            dataGridView1.ColumnCount = 7;
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "Product_Name";
+            dataGridView1.Columns[2].HeaderText = "Product_Code";
+            dataGridView1.Columns[3].HeaderText = "Product_Count";
+            dataGridView1.Columns[4].HeaderText = "Price";
+            dataGridView1.Columns[5].HeaderText = "Supplier_ID";
+            dataGridView1.Columns[6].HeaderText = "Certificate";
+
+            try
+            {
+                db.openConnection();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    data.Add(new string[dataGridView1.ColumnCount]);
+
+                    for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                    {
+                        Console.WriteLine(reader[i].ToString());
+                        data[data.Count - 1][i] = reader[i].ToString();
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            finally { db.closeConnection(); }
+
+            foreach (string[] rows in data)
+            {
+                dataGridView1.Rows.Add(rows);
+            }
+        }
     }
 }

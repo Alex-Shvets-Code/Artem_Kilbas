@@ -111,9 +111,60 @@ namespace Practic
 
         private List<string> productName = new List<string>()
         {
-            "1",
-            "2",
-            "3"
+            "Лижі (Jope)",
+            "Лижі (Jope)",
+            "Лижі (Elan)",
+            "Лижі (Rollerdlade)",
+            "Мяч футбольний (Scott)",
+            "Мяч футбольний (Salomon)",
+            "Мяч футбольний (Movino)",
+            "Ковзани (Elan)",
+            "Ковзани (Fisher)",
+            "Ковзани (Jope)",
+            "Мяч баскетбольний (Salomon)",
+            "Мяч баскетбольний (Azimut)",
+            "Санки (Fisher)",
+            "Санки (Jope)",
+            "Санки (Azimut)",
+            "Гантелі (Zelart)",
+            "Гантелі (Explore)",
+            "Гантелі (Azimut)",
+            "Турниік (Explore)",
+            "Турниік (Crossiride)",
+            "Турниік (Edea)",
+            "Обруч (Crossiride)",
+            "Обруч (Wilson)",
+            "Обруч (Salomon)",
+            "Воланчік для тенісу (Wilson)",
+            "Воланчік для тенісу (Nike)",
+            "Воланчік для тенісу (Azimut)",
+            "Ракетки для тенісу (Profi)",
+            "Ракетки для тенісу (Rollerdlade)",
+            "Ракетки для тенісу (Adidas)",
+            "Скакалка (Cannondele)",
+            "Скакалка (Zelar)",
+            "Скакалка (Scott)",
+            "Експандер (Vacron)",
+            "Експандер (Movino)",
+            "Експандер (Nike)",
+            "Бігова доріжка (Nike)",
+            "Бігова доріжка (Adidas)",
+            "Бігова доріжка (Fisher)",
+            "Боксерскі перчатки (Edea)",
+            "Боксерскі перчатки (Nike)",
+            "Боксерскі перчатки (Azimut)",
+            "Велосипед (Azimut)",
+            "Велосипед (Edea)",
+            "Велосипед (Wilson)",
+            "Самокат (Rollerdlade)",
+            "Самокат (Fisher)",
+            "Самокат (Explore)",
+            "Роліка (Movino)",
+            "Роліка (Elan)",
+            "Роліка (Zelart)",
+            "Скейт (Adidas)",
+            "Скейт (Nike)",
+            "Скейт (Elan)"
         };
 
         public static string GenerateRandomNumber(int length)
@@ -233,7 +284,7 @@ namespace Practic
         public void SendData()
         {
 
-            List<Product> products = GenerateProductData(10);
+            List<Product> products = GenerateProductData(50);
             List<Warehouse> warehouses = GenerateWarehouseData(20, products);
             List<Supplier> suppliers = GenerateSupplierData(10);
             List<Buyer> buyers = GenerateBuyerData(5);

@@ -67,6 +67,8 @@
             this.tBoxNameProduct = new System.Windows.Forms.TextBox();
             this.btnCertificateTest = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
+            this.BtnBestBuyer = new System.Windows.Forms.Button();
+            this.BtnOverpriceProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gBoxReq2.SuspendLayout();
             this.gBoxReq3.SuspendLayout();
@@ -82,7 +84,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(743, 202);
+            this.dataGridView1.Size = new System.Drawing.Size(798, 202);
             this.dataGridView1.TabIndex = 0;
             // 
             // BtnShowReq1
@@ -157,7 +159,7 @@
             // 
             // BtnGenerate
             // 
-            this.BtnGenerate.Location = new System.Drawing.Point(713, 11);
+            this.BtnGenerate.Location = new System.Drawing.Point(742, 12);
             this.BtnGenerate.Name = "BtnGenerate";
             this.BtnGenerate.Size = new System.Drawing.Size(75, 23);
             this.BtnGenerate.TabIndex = 9;
@@ -375,9 +377,9 @@
             // 
             this.gBoxReq5.Controls.Add(this.cBoxBuyer);
             this.gBoxReq5.Controls.Add(this.BtnBuyer);
-            this.gBoxReq5.Location = new System.Drawing.Point(337, 11);
+            this.gBoxReq5.Location = new System.Drawing.Point(337, 12);
             this.gBoxReq5.Name = "gBoxReq5";
-            this.gBoxReq5.Size = new System.Drawing.Size(156, 102);
+            this.gBoxReq5.Size = new System.Drawing.Size(156, 101);
             this.gBoxReq5.TabIndex = 13;
             this.gBoxReq5.TabStop = false;
             this.gBoxReq5.Text = "REQ 5";
@@ -451,7 +453,7 @@
             // 
             this.gBoxReq8.Controls.Add(this.tBoxNameProduct);
             this.gBoxReq8.Controls.Add(this.btnCertificateTest);
-            this.gBoxReq8.Location = new System.Drawing.Point(580, 12);
+            this.gBoxReq8.Location = new System.Drawing.Point(499, 12);
             this.gBoxReq8.Name = "gBoxReq8";
             this.gBoxReq8.Size = new System.Drawing.Size(156, 101);
             this.gBoxReq8.TabIndex = 16;
@@ -478,7 +480,7 @@
             // 
             // BtnClear
             // 
-            this.BtnClear.Location = new System.Drawing.Point(617, 192);
+            this.BtnClear.Location = new System.Drawing.Point(672, 204);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(138, 26);
             this.BtnClear.TabIndex = 17;
@@ -486,14 +488,36 @@
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // BtnBestBuyer
+            // 
+            this.BtnBestBuyer.Location = new System.Drawing.Point(499, 12);
+            this.BtnBestBuyer.Name = "BtnBestBuyer";
+            this.BtnBestBuyer.Size = new System.Drawing.Size(75, 23);
+            this.BtnBestBuyer.TabIndex = 18;
+            this.BtnBestBuyer.Text = "REQ 7";
+            this.BtnBestBuyer.UseVisualStyleBackColor = true;
+            this.BtnBestBuyer.Click += new System.EventHandler(this.BtnBestBuyer_Click);
+            // 
+            // BtnOverpriceProduct
+            // 
+            this.BtnOverpriceProduct.Location = new System.Drawing.Point(661, 12);
+            this.BtnOverpriceProduct.Name = "BtnOverpriceProduct";
+            this.BtnOverpriceProduct.Size = new System.Drawing.Size(75, 23);
+            this.BtnOverpriceProduct.TabIndex = 19;
+            this.BtnOverpriceProduct.Text = "REQ 9";
+            this.BtnOverpriceProduct.UseVisualStyleBackColor = true;
+            this.BtnOverpriceProduct.Click += new System.EventHandler(this.BtnOverpriceProduct_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnClear);
+            this.ClientSize = new System.Drawing.Size(822, 450);
             this.Controls.Add(this.gBoxReq8);
             this.Controls.Add(this.gBoxReq6);
+            this.Controls.Add(this.BtnOverpriceProduct);
+            this.Controls.Add(this.BtnBestBuyer);
+            this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.gBoxReq5);
             this.Controls.Add(this.gBoxReq4);
             this.Controls.Add(this.gBoxReq3);
@@ -564,6 +588,8 @@
         private System.Windows.Forms.RadioButton rButtonLow;
         private System.Windows.Forms.RadioButton rButtonHight;
         private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.Button BtnBestBuyer;
+        private System.Windows.Forms.Button BtnOverpriceProduct;
     }
 }
 
