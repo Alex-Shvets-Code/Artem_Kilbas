@@ -193,7 +193,7 @@ namespace Practic
                     Product_Count = random.Next(1, 900000),
                     Price = random.Next(1, 1000),
                     Supplier_ID = random.Next(1, 5),
-                    Certificate = random.Next(2) == 0 ? "Yes" : "No"                   
+                    Certificate = random.Next(2) == 0 ? "Yes" : "No"
                 };
                 products.Add(product);
             }
@@ -360,7 +360,7 @@ namespace Practic
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { Console.WriteLine("#5"); }
-            db.closeConnection();              
+            db.closeConnection();
         }
 
         public void Request(string query)
@@ -368,7 +368,7 @@ namespace Practic
             using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
             {
                 command.ExecuteNonQuery();
-            }            
+            }
         }
 
     }

@@ -25,13 +25,13 @@ namespace Practic
             checkBox6.Visible = false;
             checkBox7.Visible = false;
         }//+
-       
+
         public string Query(int key)
         {
             string TableName = "";
             string coll = query;
             query = "SELECT ";
-            switch(key)
+            switch (key)
             {
                 case 0:
                     TableName = "Buyer";
@@ -51,10 +51,10 @@ namespace Practic
             }
 
             query += coll + " FROM " + TableName;
-            
+
             return query;
         }//+
-        
+
         private void ColunmNames()
         {
             dataGridView1.ColumnCount = 7;
@@ -101,7 +101,7 @@ namespace Practic
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
         }
-        
+
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
             BtnGenerate.Enabled = false;
@@ -218,7 +218,7 @@ namespace Practic
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
             finally { db.closeConnection(); }
         }//+
-        
+
         private void BtnShowReq8_Click(object sender, EventArgs e)
         {
             gBoxReq8.Visible = true;
@@ -267,7 +267,7 @@ namespace Practic
                     checkBox4.Text = "Product_Count";
                     checkBox5.Text = "Buyer_ID";
                     break;
-                default:                   
+                default:
                     break;
             }
         }//+
@@ -383,10 +383,10 @@ namespace Practic
             dataGridView1.Columns[2].HeaderText = "Product Count";
 
             SendData(command);
-        
+
             gBoxReq6.Visible = false;
         }//6
-        
+
         private void btnCertificateTest_Click(object sender, EventArgs e)
         {
             Clear();
@@ -415,7 +415,7 @@ namespace Practic
                     dataGridView1.Rows.Add(productName, certificate);
                 }
             }
-            catch(Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { db.closeConnection(); }
 
             Console.WriteLine(certificate);
